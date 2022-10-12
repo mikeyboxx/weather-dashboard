@@ -149,7 +149,7 @@ var formSubmitHandler = function (arrSearchHistory, event ){
     // if city not found in Search History then get Geo data, store in object, and push to Search history array
     if (findIndex === -1){
         (async function (){
-            let apiObj = await fetchApiGeoData(city);  // fetch Geo data for a city
+            let apiObj = await fetchApiGeoData(cityInput);  // fetch Geo data for a city
             // if city not found, return
             if (apiObj.length===0) {
                 $(foundMsg).text('City not found!');   
