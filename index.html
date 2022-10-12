@@ -31,9 +31,10 @@
     <div class="jumbotron-fluid custom-jumbotron text-center p-1 pt-2">
         <h1 class="display-5">Weather Dashboard</h1>
     </div>
-    <div class="container-fluid  ">
+    <div class="container-fluid  ">   
         <div class="row ">
-            <div class="col-3 mt-3">    <!-- contains the instructions a card   -->
+            <!-- Search for a city container  -->
+            <div class="col-3 mt-3">    
                 <div class="card">
                     <div class="card-body d-flex flex-column p-2">
                         <form class="" id="formSearch">
@@ -47,21 +48,22 @@
                             <p class="text-center mt-2"><small id="foundMsg" class="text-danger font-weight-bold"></small></p>
                         </form>
                         <hr class="card-title border w-100" />
+                        <!-- container for saved cities items, to be generated in javascript -->    
                         <ul class="list-group list-group-flush" id="cityHistory">
-                            <!-- to be generated in javascript 
-                            <li class="list-group-item p-0 pt-2"><button class="btn btn-block custom-btn">Atlanta</button></li>-->
+                            <!-- <li class="list-group-item p-0 pt-2"><button class="btn btn-block custom-btn">Atlanta</button></li>-->
                         </ul>    
                     </div>    
                 </div>
             </div>
-            <div class="col-9">     <!-- contains the project table   -->
+            <!-- container for current and 5 day forecast sections   -->
+            <div class="col-9">     
                 <div class="row d-flex flex-column border border-dark mr-1 mt-3 p-0" id="currentWeatherContainer">
+                    <!--container for current forecast API fields, to be generated in javascript -->
                     <div class="col d-flex flex-column" id="currentForecast">
-                <!--to be generated in javascript 
-                    <h3>Atlanta <span>(9/13/2022) ☀️</span></h3>
-                    <p class="mt-3">Temp: <span>76.62°F</span></p>
-                    <p>Wind: <span>8.43 MPH</span></p>
-                    <p>Humidity: <span>44%</span></p> -->
+                        <!-- <h3>Atlanta <span>(9/13/2022) ☀️</span></h3>
+                        <p class="mt-3">Temp: <span>76.62°F</span></p>
+                        <p>Wind: <span>8.43 MPH</span></p>
+                        <p>Humidity: <span>44%</span></p> -->
                     </div>
                 </div>
                 <div class="row mt-3" id="fiveDayWeatherContainer">
@@ -69,9 +71,9 @@
                         <h5>5-Day Forecast:</h5>
                     </div>
                 </div>
+                <!--container for 5 day forecast API fields, to be generated in javascript -->
                 <div class="row d-flex" id="fiveDayForecast">
-                <!--to be generated in javascript  
-                    <div class="col pl-0">
+                <!-- <div class="col pl-0">
                         <div class="card">
                             <div class="card-body d-flex flex-column custom-card-body p-1">
                                 <h5>9/14/2022</h5>
@@ -86,12 +88,9 @@
             </div>
         </div>
     </div>
-</body>
 
-    
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="./assets/js/script.js"></script>
-
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
