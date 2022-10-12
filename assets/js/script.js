@@ -3,7 +3,10 @@ async function fetchApiGeoData(city){
     let apiKey = '60d38292445dbe1a20b97c43b4fe3bd2';
     let apiObj = {};
 
-    await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`)
+    await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`,
+        {
+        cache: 'reload'
+        })
         .then(response => response.json())
         .then(response => (apiObj = response))
         .catch(err => console.error(err));
@@ -79,7 +82,7 @@ function renderCurrentForecast(apiObj){
     let dt = Date(apiObj.dt).toLocaleString();  // convert date to ISO string
 
     let spanEl = $('<span>').text(' ' + moment(dt,'ddd mm YYYY').format('(MM/DD/YYYY)'));  // format the date
-    let imgEl = $('<img>').attr('src',`http://openweathermap.org/img/wn/${apiObj.weather[0].icon}@2x.png`).addClass('p-0 pb-3');
+    let imgEl = $('<img>').attr('src',`https://openweathermap.org/img/wn/${apiObj.weather[0].icon}@2x.png`).addClass('p-0 pb-3');
     $(spanEl).append(imgEl);
     
     let h3El = $('<h3>').text(apiObj.name).addClass('m-0 p-0')
@@ -119,7 +122,7 @@ function renderFiveDayForecast(apiObj){
         let h5El = $('<h5>').text(moment(apiObj.list[i].dt_txt, 'YYYY-MM-DD').format('MM/DD/YYYY')); // format timestamp
         $(cardBodyEl).append(h5El);
 
-        let imgEl = $('<img>').attr('src',`http://openweathermap.org/img/wn/${apiObj.list[i].weather[0].icon}@2x.png`);
+        let imgEl = $('<img>').attr('src',`https://openweathermap.org/img/wn/${apiObj.list[i].weather[0].icon}@2x.png`);
         $(cardBodyEl).append(imgEl);
 
         let pEl = $('<p>').text('Temp: ' + Math.ceil(apiObj.list[i].main.temp) + '°F');
